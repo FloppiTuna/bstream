@@ -81,7 +81,8 @@ ffmpeg \
     -ar 48000 \
     \
     -f flv \
-    "rtmp://mediamtx:1935/live/$STREAM" &
+    -f mpegts \
+    "srt://mediamtx:8890?streamid=publish:live/$STREAM" &
 FFMPEG_PID=$!
 
 wait -n "$CHROMIUM_PID" "$FFMPEG_PID"
