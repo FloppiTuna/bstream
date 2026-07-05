@@ -11,6 +11,10 @@ dbus-daemon \
 
 export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/dbus/session
 
+echo "Cleaning stale Xvfb lock..."
+rm -f /tmp/.X99-lock
+rm -rf /tmp/.X11-unix/X99
+
 echo "Initializing the display..."
 Xvfb "$DISPLAY" -screen 0 1024x768x24 &
 until xdpyinfo >/dev/null 2>&1; do
