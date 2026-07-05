@@ -80,7 +80,6 @@ ffmpeg \
     -b:a 128k \
     -ar 48000 \
     \
-    -f flv \
     -f mpegts \
     "srt://mediamtx:8890?streamid=publish:live/$STREAM" &
 FFMPEG_PID=$!
