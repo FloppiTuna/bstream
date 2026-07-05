@@ -79,9 +79,8 @@ ffmpeg \
     -c:a aac \
     -b:a 128k \
     -ar 48000 \
-    \
-    -f mpegts \
-    "srt://mediamtx:8890?streamid=publish:live/$STREAM" &
+    -f flv \
+    "rtmp://mediamtx:1935/live/$STREAM" &
 FFMPEG_PID=$!
 
 wait -n "$CHROMIUM_PID" "$FFMPEG_PID"
