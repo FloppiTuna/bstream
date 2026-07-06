@@ -54,7 +54,7 @@ chromium \
     --disable-renderer-backgrounding \
     --autoplay-policy=no-user-gesture-required \
     --kiosk \
-    --fullscreen \
+    --start-fullscreen \
     --app="$URL" &
 CHROMIUM_PID=$!
 
