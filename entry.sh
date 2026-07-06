@@ -55,6 +55,7 @@ chromium \
     --autoplay-policy=no-user-gesture-required \
     --kiosk \
     --start-fullscreen \
+    --start-maximized \
     --app="$URL" &
 CHROMIUM_PID=$!
 
