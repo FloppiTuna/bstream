@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
     pulseaudio \
     x11-utils \
     xauth \
+    unclutter \
     fonts-dejavu \
     fonts-liberation \
     fonts-noto \

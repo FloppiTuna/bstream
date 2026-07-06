@@ -25,6 +25,9 @@ export XDG_RUNTIME_DIR=/tmp/runtime
 mkdir -p "$XDG_RUNTIME_DIR"
 chmod 700 "$XDG_RUNTIME_DIR"
 
+echo "Hiding the mouse cursor..."
+unclutter -idle 0 &
+
 echo "Starting PulseAudio server..."
 pulseaudio \
     --daemonize=yes \
@@ -51,7 +54,7 @@ chromium \
     --disable-renderer-backgrounding \
     --autoplay-policy=no-user-gesture-required \
     --kiosk \
-    --window-size=1024,768 \
+    --start-maximized \
     --app="$URL" &
 CHROMIUM_PID=$!
 
