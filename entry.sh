@@ -16,7 +16,7 @@ rm -f /tmp/.X99-lock
 rm -rf /tmp/.X11-unix/X99
 
 echo "Initializing the display..."
-Xvfb "$DISPLAY" -screen 0 1024x768x24 &
+Xvfb "$DISPLAY" -screen 0 1280x960x24 &
 until xdpyinfo >/dev/null 2>&1; do
     sleep 0.1
 done
@@ -65,7 +65,7 @@ ffmpeg \
     -thread_queue_size 512 \
     -f x11grab \
     -framerate 30 \
-    -video_size 1024x768 \
+    -video_size 1280x960 \
     -i "$DISPLAY" \
     \
     -thread_queue_size 512 \
