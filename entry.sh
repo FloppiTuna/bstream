@@ -45,6 +45,14 @@ pactl load-module module-null-sink \
 pactl set-default-sink browser
 
 echo "Starting the browser..."
+
+mkdir -p /etc/chromium/policies/managed
+cat > /etc/chromium/policies/managed/bstream.json <<'EOF'
+{
+  "DeveloperToolsAvailability": 1
+}
+EOF
+
 chromium \
     --no-sandbox \
     --disable-gpu \
