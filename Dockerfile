@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
     dbus-x11 \
     pulseaudio \
     x11-utils \
+    xdotool \
     xauth \
     unclutter \
     fonts-dejavu \
