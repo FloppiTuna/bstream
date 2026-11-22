@@ -53,6 +53,9 @@ chromium \
     --disable-backgrounding-occluded-windows \
     --disable-renderer-backgrounding \
     --autoplay-policy=no-user-gesture-required \
+    --window-size=1280,960 \
+    --window-position=0,0 \
+    --force-device-scale-factor=1 \
     --kiosk \
     --start-fullscreen \
     --start-maximized \
