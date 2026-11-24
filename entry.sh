@@ -16,7 +16,7 @@ rm -f /tmp/.X99-lock
 rm -rf /tmp/.X11-unix/X99
 
 echo "Initializing the display..."
-Xvfb "$DISPLAY" -screen 0 1280x960x24 &
+Xvfb "$DISPLAY" -screen 0 720x480x24 &
 until xdpyinfo >/dev/null 2>&1; do
     sleep 0.1
 done
@@ -46,13 +46,6 @@ pactl set-default-sink browser
 
 echo "Starting the browser..."
 
-mkdir -p /etc/chromium/policies/managed
-cat > /etc/chromium/policies/managed/bstream.json <<'EOF'
-{
-  "DeveloperToolsAvailability": 1
-}
-EOF
-
 chromium \
     --no-sandbox \
     --disable-gpu \
@@ -61,7 +54,7 @@ chromium \
     --disable-backgrounding-occluded-windows \
     --disable-renderer-backgrounding \
     --autoplay-policy=no-user-gesture-required \
-    --window-size=1280,960 \
+    --window-size=720,480 \
     --window-position=0,0 \
     --force-device-scale-factor=1 \
     --kiosk \
@@ -76,7 +69,7 @@ ffmpeg \
     -thread_queue_size 512 \
     -f x11grab \
     -framerate 30 \
-    -video_size 1280x960 \
+    -video_size 720x480 \
     -i "$DISPLAY" \
     \
     -thread_queue_size 512 \
